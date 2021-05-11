@@ -70,7 +70,7 @@ class UpdateDatabase(Connection):
         #calculate unit_price_usd and unit_price_eur using unit_price and currency value for each row
         #then update columns unit_price_usd and unit_price_eur
         for unit_price in data:
-            unit_price_usd = float(unit_price[0]) * value_usd[0] + 500
+            unit_price_usd = float(unit_price[0]) * value_usd[0]
             unit_price_eur = float(unit_price[0]) * value_eur[0]
             self.cursor.execute(update_column, (round(unit_price_usd, 2), round(unit_price_eur, 2), unit_price[0]))
             self.connection.commit()
