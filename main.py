@@ -18,7 +18,7 @@ parser.add_argument("--export", action="store_true")
 args = parser.parse_args()
 
 #get values USD and EUR values from NBP api
-#if status code != 200 and stop program
+#if status code != 200 then stop program
 try:
     response_usd = requests.get("http://api.nbp.pl/api/exchangerates/rates/a/usd/?format=json")
     response_eur = requests.get("http://api.nbp.pl/api/exchangerates/rates/a/eur/?format=json")
